@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Filtering</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <a href="./index.html"
+        ><em class="bi bi-arrow-left-circle display-4 mt-5"></em
+      ></a>
+      <p class="text-primary display-3 text-center">Filtering</p>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="fw-bold"> Filtering </span>
+          <ul>
+            <li>first() : background orange</li>
+            <li>last() : blue text</li>
+            <li>eq() : aqua border</li>
+            <li>filter() : cadetblue text</li>
+            <li>not() : blue text</li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p class="fw-bold">Demo</p>
+
+          <div class="inner-div" style="border: 1px solid black">
+            <p>First Para</p>
+            <p>Another paragraph in a div.</p>
+          </div>
+          <br />
+
+          <div class="inner-div2" style="border: 1px solid black">
+            <p>not inner class para</p>
+            <p>Another paragraph in another div.</p>
+          </div>
+          <br />
+
+          <div class="inner-div" style="border: 1px solid black">
+            <p>eq(2) para</p>
+            <p>Another paragraph in another div.</p>
+          </div>
+          <br />
+
+          <div class="hello-class" style="border: 1px solid black">
+            <p>hello-class div para</p>
+            <p>Another paragraph in another div.</p>
+          </div>
+          <br />
+
+          <div class="inner-div" style="border: 1px solid black">
+            <p>Last Para</p>
+            <p>Another paragraph in another div.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("div.inner-div").first().css("background-color", "orange");
+        $("div.inner-div").last().css("background-color", "green");
+        $("div.inner-div").eq(2).css("background-color", "aqua");
+        $("div").not('.inner-div').css("background-color", "wheat");
+        $("div").filter('.hello-class').css("background-color", "cadetblue");
+      });
+    </script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

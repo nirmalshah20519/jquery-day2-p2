@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AJAX</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <a href="./index.html"
+        ><em class="bi bi-arrow-left-circle display-4 mt-5"></em
+      ></a>
+      <p class="text-primary display-3 text-center">AJAX</p>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="fw-bold"> AJAX </span>
+          <ul>
+            <li>load method</li>
+            <li>jQuery get and getJson methods</li>
+            <li>jQuery POST request</li>
+            <li>Retrieving js file</li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p class="fw-bold">load method</p>
+          <div id="load-method"></div>
+        </li>
+        <li class="list-group-item">
+          <p class="fw-bold">jQuery get and getJson methods</p>
+          <p class="fw-semibold">jQuery get</p>
+          <button class="btn btn-outline-primary" id="get">Get</button>
+          <p>Status : <span id="getStatus"></span></p>
+          <div id="get-method"></div>
+          <p class="fw-semibold">getJson method</p>
+          <button class="btn btn-outline-primary" id="getJSON">Get Json</button>
+          <div id="getjson-method"></div>
+        </li>        
+      </ul>
+    </div>
+    <script>
+      $("#load-method").load("data.json");
+
+      $("#get").click(function () {
+        $.get("data.json", function (data, status) {
+          $("#getStatus").html(status);
+          $("#getStatus").css("color", "green");
+          console.log(data);
+          $("#get-method").html(JSON.stringify(data));
+        });
+      });
+
+      $("#getJSON").click(function () {
+        $.getJSON("data.json", function (result) {
+          $.each(result, function (i, field) {
+            $("#getjson-method").append(JSON.stringify(field) + " ");
+          });
+        });
+      });
+    </script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
